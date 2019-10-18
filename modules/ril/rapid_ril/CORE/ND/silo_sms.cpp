@@ -824,7 +824,7 @@ BOOL CSilo_SMS::ParseCDS(CResponse* const pResponse, const char*& rszPointer)
 
     pResponse->SetResultCode(RIL_UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT);
 
-    if (!pResponse->SetData((void*) szPDU, sizeof(char) * uiLength, FALSE))
+    if (!pResponse->SetData((void*) szPDU, sizeof(char) * (uiLength-1), FALSE))
     {
         goto Error;
     }
